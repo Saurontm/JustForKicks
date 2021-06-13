@@ -7,14 +7,14 @@ body{
 `;
 
 export const Title = styled.h1`
-  color: dimgray;
+  color: ${(props) => props.theme.mainColor};
   text-align: center;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 `;
 
 export const Description = styled.h4`
-  color: dimgray;
+  color: ${(props) => props.theme.mainColor};
   text-align: center;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
@@ -42,7 +42,7 @@ export const ProductWrapper = styled.div`
 
   p {
     text-align: center;
-    color: dimgray;
+    color: ${(props) => props.theme.mainColor};
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
     margin: 20px;
@@ -51,4 +51,13 @@ export const ProductWrapper = styled.div`
       color: ${(props) => props.theme.mainColor};
     }
   }
+`;
+
+export const ThemeButton = styled.button`
+  font-size: 1em;
+  margin: 1.25em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+  background-color: ${(props) => props.theme.mainColor};
+  color: ${(props) => props.theme.backgroundColor};
 `;
