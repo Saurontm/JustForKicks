@@ -1,12 +1,23 @@
 import products from "../products";
 import SneakerItem from "./SneakerItem";
 import { ListWrapper } from "../styles";
+import SearchBar from "./SearchBar";
+import { useState } from "react";
 
 const SneakersList = () => {
-  const sneakersList = products.map((product) => (
-    <SneakerItem sneaker={product} />
-  ));
-  return <ListWrapper> {sneakersList}</ListWrapper>;
+  const [query, setQuery] = useState("");
+
+  const sneakersList = products
+    .filter((product) =>
+      product.name.toLowerCase().includes(query.toLowerCase())
+    )
+    .map((product) => <SneakerItem sneaker={product} />);
+  return (
+    <div>
+      <SearchBar setQuery={setQuery} />
+      <ListWrapper>{sneakersList}</ListWrapper>
+    </div>
+  );
 };
 
 export default SneakersList;

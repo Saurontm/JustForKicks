@@ -4,9 +4,10 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../src/styles";
 import { useState } from "react";
 import { ThemeButton } from "./styles";
+import { BiMoon, BiSun } from "react-icons/bi";
 
 const theme = {
-  light: { mainColor: "black", backgroundColor: "white" },
+  light: { mainColor: "#222222", backgroundColor: "white" },
   dark: { mainColor: "white", backgroundColor: "#222222" },
 };
 
@@ -22,7 +23,7 @@ function App() {
       <ThemeProvider theme={theme[currentTheme]}>
         <GlobalStyle />
         <ThemeButton onClick={toggleTheme}>
-          {currentTheme === "light" ? "Dark" : "Light"} mode
+          {currentTheme === "light" ? <BiMoon /> : <BiSun />}
         </ThemeButton>
         <HomePage />
       </ThemeProvider>
