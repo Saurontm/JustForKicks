@@ -7,8 +7,8 @@ const HomePage = () => {
   return (
     <div>
       <div>
-        <Title>JUST FOR KICKS!</Title>
-        <Description>Where you find your sole-mate ♡ </Description>
+        <Title>JUST FOR KICKS</Title>
+        <Description>find your sole-mate</Description>
         <ShopImage id="shop-image" src={loveLetter} alt="love letters" />
       </div>
       <SneakersList />

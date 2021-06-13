@@ -22,10 +22,10 @@ function App() {
     <div>
       <ThemeProvider theme={theme[currentTheme]}>
         <GlobalStyle />
+        <HomePage />
         <ThemeButton onClick={toggleTheme}>
           {currentTheme === "light" ? <BiMoon /> : <BiSun />}
         </ThemeButton>
-        <HomePage />
       </ThemeProvider>
     </div>
   );

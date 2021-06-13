@@ -9,15 +9,20 @@ body{
 export const Title = styled.h1`
   color: ${(props) => props.theme.mainColor};
   text-align: center;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 400%;
 `;
 
 export const Description = styled.h4`
   color: ${(props) => props.theme.mainColor};
   text-align: center;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "Bodoni Moda", serif;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 200%;
+  margin-top: -50px;
+  margin-bottom: -20px;
 `;
 
 export const ShopImage = styled.img`
