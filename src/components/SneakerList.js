@@ -4,14 +4,16 @@ import { ListWrapper } from "../styles";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 
-const SneakersList = () => {
+const SneakersList = (props) => {
   const [query, setQuery] = useState("");
 
   const sneakersList = products
     .filter((product) =>
       product.name.toLowerCase().includes(query.toLowerCase())
     )
-    .map((product) => <SneakerItem sneaker={product} />);
+    .map((product) => (
+      <SneakerItem sneaker={product} setSneaker={props.setSneaker} />
+    ));
   return (
     <div>
       <SearchBar setQuery={setQuery} />

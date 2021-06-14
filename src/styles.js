@@ -47,13 +47,13 @@ export const ProductWrapper = styled.div`
 
   p {
     text-align: center;
-    color: ${(props) => props.theme.mainColor};
+    color: ${(props) => props.theme.secondaryColor};
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
     margin: 20px;
 
     &.product-price {
-      color: ${(props) => props.theme.mainColor};
+      color: ${(props) => props.theme.secondaryColor};
     }
   }
 `;
@@ -63,7 +63,7 @@ export const ThemeButton = styled.button`
   margin: 1.25em;
   padding: 0.25em 0.5em;
   border-radius: 30px;
-  background-color: ${(props) => props.theme.mainColor};
+  background-color: ${(props) => props.theme.secondaryColor};
   color: ${(props) => props.theme.backgroundColor};
 `;
 
@@ -72,4 +72,27 @@ export const SearchBarStyled = styled.input`
   margin: 1rem auto;
   display: block;
   width: 40%;
+`;
+
+export const DetailWrapper = styled.div`
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: 80%;
+  img {
+    width: 40%;
+    float: left;
+    margin-right: 20px;
+  }
+  h4 {
+    font-size: 30px;
+    ${"" /* vertical-align: middle; */}
+    color: ${(props) => props.theme.secondaryColor};
+  }
+  p {
+    padding-right: 20px;
+    ${"" /* vertical-align: middle; */}
+    color: ${(props) => props.theme.secondaryColor};
+  }
 `;

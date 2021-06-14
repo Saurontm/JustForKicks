@@ -7,8 +7,16 @@ import { ThemeButton } from "./styles";
 import { BiMoon, BiSun } from "react-icons/bi";
 
 const theme = {
-  light: { mainColor: "#222222", backgroundColor: "white" },
-  dark: { mainColor: "white", backgroundColor: "#222222" },
+  light: {
+    mainColor: "#222222",
+    backgroundColor: "white",
+    secondaryColor: "#252525",
+  },
+  dark: {
+    mainColor: "white",
+    backgroundColor: "#222222",
+    secondaryColor: "#DEDEDE",
+  },
 };
 
 function App() {
