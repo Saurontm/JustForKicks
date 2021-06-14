@@ -21,7 +21,7 @@ export const Description = styled.h4`
   font-style: italic;
   font-weight: 100;
   font-size: 200%;
-  margin-top: -50px;
+  margin-top: -60px;
   margin-bottom: -20px;
 `;
 
@@ -38,9 +38,10 @@ export const ListWrapper = styled.div`
 `;
 
 export const ProductWrapper = styled.div`
+  margin: 50px;
   img {
     width: auto;
-    height: 150px;
+    height: 180px;
     display: block;
     margin: 0 auto;
   }
@@ -50,7 +51,7 @@ export const ProductWrapper = styled.div`
     color: ${(props) => props.theme.secondaryColor};
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
-    margin: 20px;
+    margin: 30px;
 
     &.product-price {
       color: ${(props) => props.theme.secondaryColor};
@@ -72,6 +73,8 @@ export const SearchBarStyled = styled.input`
   margin: 1rem auto;
   display: block;
   width: 40%;
+  border: 1px solid #b0b0b0;
+  border-radius: 4px;
 `;
 
 export const DetailWrapper = styled.div`
@@ -88,7 +91,7 @@ export const DetailWrapper = styled.div`
   h4 {
     font-size: 30px;
     ${"" /* vertical-align: middle; */}
-    color: ${(props) => props.theme.secondaryColor};
+    color: ${(props) => props.theme.mainColor};
   }
   p {
     padding-right: 20px;

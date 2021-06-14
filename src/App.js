@@ -10,7 +10,7 @@ const theme = {
   light: {
     mainColor: "#222222",
     backgroundColor: "white",
-    secondaryColor: "#252525",
+    secondaryColor: "#4B4B4B",
   },
   dark: {
     mainColor: "white",
