@@ -11,11 +11,13 @@ const theme = {
     mainColor: "#222222",
     backgroundColor: "white",
     secondaryColor: "#4B4B4B",
+    lightColor: "#B3B3B3",
   },
   dark: {
     mainColor: "white",
     backgroundColor: "#222222",
     secondaryColor: "#DEDEDE",
+    lightColor: "#5E5E5E",
   },
 };
 

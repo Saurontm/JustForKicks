@@ -39,6 +39,7 @@ export const ListWrapper = styled.div`
 
 export const ProductWrapper = styled.div`
   margin: 50px;
+  text-align: center;
   img {
     width: auto;
     height: 180px;
@@ -56,16 +57,51 @@ export const ProductWrapper = styled.div`
     &.product-price {
       color: ${(props) => props.theme.secondaryColor};
     }
+
+    button {
+      allign: center;
+    }
   }
 `;
 
 export const ThemeButton = styled.button`
   font-size: 1em;
   margin: 1.25em;
+  border: 2px solid;
   padding: 0.25em 0.5em;
   border-radius: 30px;
   background-color: ${(props) => props.theme.secondaryColor};
   color: ${(props) => props.theme.backgroundColor};
+`;
+
+export const DeleteButtonStyled = styled.button`
+  font-size: 1em;
+  margin: 1.25em;
+  border: 1px solid;
+  padding-top: 0.5em;
+  padding-bottom: 0.3em;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  border-radius: 30px;
+  background-color: #cf5959;
+  color: white;
+`;
+
+export const BackButton = styled.button`
+  font-size: 1em;
+  margin: 1.25em;
+  padding: 0.25em 0.5em;
+  border: 2px solid;
+  border-radius: 40px;
+  border-color: ${(props) => props.theme.lightColor};
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.lightColor};
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${(props) => props.theme.lightColor};
+    color: ${(props) => props.theme.backgroundColor};
+  }
 `;
 
 export const SearchBarStyled = styled.input`
@@ -83,8 +119,9 @@ export const DetailWrapper = styled.div`
   margin-right: auto;
   padding: 20px;
   width: 80%;
+
   img {
-    width: 40%;
+    width: 50%;
     float: left;
     margin-right: 20px;
   }
