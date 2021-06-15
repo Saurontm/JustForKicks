@@ -70,8 +70,14 @@ export const ThemeButton = styled.button`
   border: 2px solid;
   padding: 0.25em 0.5em;
   border-radius: 30px;
-  background-color: ${(props) => props.theme.secondaryColor};
-  color: ${(props) => props.theme.backgroundColor};
+  float: right;
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.secondaryColor};
+
+  &:hover {
+    background-color: ${(props) => props.theme.secondaryColor};
+    color: ${(props) => props.theme.backgroundColor};
+  }
 `;
 
 export const DeleteButtonStyled = styled.button`
@@ -83,13 +89,19 @@ export const DeleteButtonStyled = styled.button`
   padding-right: 0.5em;
   padding-left: 0.5em;
   border-radius: 30px;
-  background-color: #cf5959;
-  color: white;
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: #cf5959;
+
+  &:hover {
+    background-color: #cf5959;
+    color: ${(props) => props.theme.backgroundColor};
+  }
 `;
 
 export const BackButton = styled.button`
+  float: right;
   font-size: 1em;
-  margin: 1.25em;
+  ${"" /* margin: 1.25em; */}
   padding: 0.25em 0.5em;
   border: 2px solid;
   border-radius: 40px;
@@ -97,7 +109,6 @@ export const BackButton = styled.button`
   background-color: ${(props) => props.theme.backgroundColor};
   color: ${(props) => props.theme.lightColor};
   cursor: pointer;
-
   &:hover {
     background-color: ${(props) => props.theme.lightColor};
     color: ${(props) => props.theme.backgroundColor};
@@ -114,7 +125,9 @@ export const SearchBarStyled = styled.input`
 `;
 
 export const DetailWrapper = styled.div`
-  display: block;
+  display: "flex"
+  align-content: center;
+  ${"" /* display: block; */}
   margin-left: auto;
   margin-right: auto;
   padding: 20px;

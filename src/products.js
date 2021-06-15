@@ -24,7 +24,7 @@ const products = [
     imageURL:
       "https://sneakernews.com/wp-content/uploads/2021/06/Nike-Air-Force-1-Low-CZ0268-300-8.jpg?w=1140",
     description:
-      "Previously seen in a predominantly-cork arrangement, the newly-surfaced proposition indulges in a summer-ready ensemble clad in shades of “Green Glow” and “Coconut Milk.” Canvas material across the shoe’s upper delivers a lighter stride than traditional leather would, and when paired with the tropical hues throughout the tongue, profile swooshes and spine, it becomes appropriate of the upcoming season. The aforementioned jolly fruit replaces standard branding on the top of the tongue, and even inspires the product sticker graphic printed on the speckled cork sock-liner. Lastly, lace dubraes and outsoles further boast all-cork constructions, rooted in the company’s “Move to Zero” campaign.",
+      "Previously seen in a predominantly-cork arrangement, the newly-surfaced proposition indulges in a summer-ready ensemble clad in shades of “Green Glow” and “Coconut Milk.” Canvas material across the shoe’s upper delivers a lighter stride than traditional leather would, and when paired with the tropical hues throughout the tongue, profile swooshes and spine, it becomes appropriate of the upcoming season.",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const products = [
     imageURL:
       "https://sneakernews.com/wp-content/uploads/2021/04/Nike-Air-Force-1-Low-TGU-DM5447-111-3.jpg",
     description:
-      "Clad in the ever-popular white-on-white color palette, the newly-surfaced pair features a number of details throughout its leather upper that differentiate it from those worn during the summer in Harlem and the Bronx. A geometric graphic of a human head takes over most of the Air Force 1 Low‘s lateral mid-foot panel, accompanied by two “HAVE A NIKE DAY” logos; medial profiles sport imagery of two hands holding a lit torch, flora and what appears to be a reptilian creature. While not as direct nods to the classical Chinese ideology of the Great Unity as the text on the lateral heel and sock-liner, these graphics allude to the utopian vision of the world written about before 907 B.C. Iridescent lace dubraes, semi-translucent profile swooshes and holographic “NIKE AIR”-branded heel panels evoke the idea of enlightenment, which under the Great Unity, would lead to virtuous rule of the people, by the people; benevolence for the welfare of all, especially the elderly; and a lack of selfish thoughts.",
+      "While not as direct nods to the classical Chinese ideology of the Great Unity as the text on the lateral heel and sock-liner, these graphics allude to the utopian vision of the world written about before 907 B.C. Iridescent lace dubraes, semi-translucent profile swooshes and holographic “NIKE AIR”-branded heel panels evoke the idea of enlightenment, which under the Great Unity, would lead to virtuous rule of the people, by the people; benevolence for the welfare of all, especially the elderly; and a lack of selfish thoughts.",
   },
 ];
 export default products;
