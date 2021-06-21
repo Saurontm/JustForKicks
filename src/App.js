@@ -3,8 +3,12 @@ import HomePage from "./components/Home";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../src/styles";
 import { useState } from "react";
-import { ThemeButton } from "./styles";
-import { BiMoon, BiSun } from "react-icons/bi";
+import { Route } from "react-router";
+import { Switch } from "react-router";
+import products from "./products";
+import SneakersList from "./components/SneakerList";
+import Navibar from "./components/NaviBar";
+import SneakerDetail from "./components/SneakerDetails";
 
 const theme = {
   light: {
@@ -15,13 +19,23 @@ const theme = {
   },
   dark: {
     mainColor: "white",
-    backgroundColor: "#222222",
+    backgroundColor: "#272C31",
     secondaryColor: "#DEDEDE",
     lightColor: "#5E5E5E",
   },
 };
 
 function App() {
+  const [_products, setProducts] = useState(products);
+
+  const productDelete = (sneakerID) => {
+    const updatedProducts = _products.filter(
+      (sneaker) => sneaker.id !== sneakerID
+    );
+    console.log(updatedProducts);
+    setProducts(updatedProducts);
+  };
+
   const [currentTheme, setCurrentTheme] = useState("light");
   const toggleTheme = () => {
     currentTheme === "light"
@@ -32,10 +46,24 @@ function App() {
     <div>
       <ThemeProvider theme={theme[currentTheme]}>
         <GlobalStyle />
-        <HomePage />
-        <ThemeButton onClick={toggleTheme}>
-          {currentTheme === "light" ? <BiMoon /> : <BiSun />}
-        </ThemeButton>
+        <Navibar
+          currentTheme={currentTheme}
+          toggleTheme={toggleTheme}
+        ></Navibar>
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route path="/products/:productSlug">
+            <SneakerDetail
+              products={products}
+              productDelete={productDelete}
+            ></SneakerDetail>
+          </Route>
+          <Route path="/products">
+            <SneakersList products={_products} productDelete={productDelete} />
+          </Route>
+        </Switch>
       </ThemeProvider>
     </div>
   );

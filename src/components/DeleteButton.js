@@ -4,7 +4,7 @@ import { BsTrashFill } from "react-icons/bs";
 const DeleteButton = (props) => {
   const handleDelete = () => {
     props.productDelete(props.sneakerID);
-    props.setSneaker(null);
+    props.history.goBack();
   };
   return (
     <DeleteButtonStyled onClick={handleDelete}>

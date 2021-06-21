@@ -1,3 +1,4 @@
+import { NavLink, Link } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
@@ -6,12 +7,27 @@ body{
 }
 `;
 
+export const NavProduct = styled(NavLink)`
+  color: ${(props) => props.theme.mainColor};
+
+  &.active {
+    color: ${(props) => props.theme.lightColor};
+  }
+`;
+
+export const Logo = styled(Link)`
+  img {
+    width: 8rem;
+  }
+`;
+
 export const Title = styled.h1`
   color: ${(props) => props.theme.mainColor};
   text-align: center;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 400%;
+  margin-top: 30px;
 `;
 
 export const Description = styled.h4`
@@ -21,7 +37,7 @@ export const Description = styled.h4`
   font-style: italic;
   font-weight: 100;
   font-size: 200%;
-  margin-top: -60px;
+  margin-top: 0px;
   margin-bottom: -20px;
 `;
 

@@ -1,6 +1,7 @@
 const products = [
   {
     id: 1,
+    slug: "nike-air-force-1-low-psychic-blue",
     name: "Nike Air Force 1 Low Psychic Blue",
     price: 60,
     imageURL:
@@ -11,6 +12,7 @@ const products = [
   {
     id: 2,
     name: "Nike Air Force 1 Low Purple Suit",
+    slug: "nike-air-force-1-low-purple-suit",
     price: 70,
     imageURL:
       "https://sneakernews.com/wp-content/uploads/2021/06/nike-air-force-1-low-purple-DN5063-500-5.jpg?w=1140",
@@ -20,6 +22,7 @@ const products = [
   {
     id: 3,
     name: "The Nike Air Force 1 Low Happy Pineapple",
+    slug: "nike-air-force-1-low-happy-pineapple",
     price: 65,
     imageURL:
       "https://sneakernews.com/wp-content/uploads/2021/06/Nike-Air-Force-1-Low-CZ0268-300-8.jpg?w=1140",
@@ -29,6 +32,7 @@ const products = [
   {
     id: 4,
     name: "Nike Air Force 1 The Great Unity",
+    slug: "nike-air-force-1-the-great-unity",
     price: 70,
     imageURL:
       "https://sneakernews.com/wp-content/uploads/2021/04/Nike-Air-Force-1-Low-TGU-DM5447-111-3.jpg",

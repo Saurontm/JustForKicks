@@ -1,18 +1,28 @@
 import { DetailWrapper, BackButton } from "../styles";
 import DeleteButton from "./DeleteButton";
+import { useParams, Redirect } from "react-router";
+import { useHistory } from "react-router-dom";
+
 const SneakerDetail = (props) => {
+  const history = useHistory();
+  const productSlug = useParams().productSlug;
+  const sneaker = props.products.find(
+    (sneaker) => sneaker.slug === productSlug
+  );
+
+  if (!sneaker) return <Redirect to="/products" />;
   return (
     <DetailWrapper>
-      <BackButton onClick={() => props.setSneaker(null)}>back</BackButton>
-      <img src={props.sneaker.imageURL} alt={props.sneaker.name} />
+      <BackButton onClick={() => history.goBack()}>back</BackButton>
+      <img src={sneaker.imageURL} alt={sneaker.name} />
 
-      <h4>{props.sneaker.name}</h4>
-      <p>{props.sneaker.description}</p>
-      <p>{props.sneaker.price} KD</p>
+      <h4>{sneaker.name}</h4>
+      <p>{sneaker.description}</p>
+      <p>{sneaker.price} KD</p>
       <DeleteButton
-        setSneaker={props.setSneaker}
         productDelete={props.productDelete}
-        sneakerID={props.sneaker.id}
+        sneakerID={sneaker.id}
+        history={history}
       ></DeleteButton>
     </DetailWrapper>
   );
