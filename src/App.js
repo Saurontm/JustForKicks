@@ -9,6 +9,7 @@ import products from "./products";
 import SneakersList from "./components/SneakerList";
 import Navibar from "./components/NaviBar";
 import SneakerDetail from "./components/SneakerDetails";
+import React from "react";
 
 const theme = {
   light: {

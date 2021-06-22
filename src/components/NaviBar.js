@@ -5,7 +5,6 @@ import lightLogo from "../light-logo.png";
 import darkLogo from "../dark-logo.png";
 const NaviBar = (props) => {
   return (
-    // <Navbar bg="light-dark" variant="light dark">
     <Navbar bg={props.currentTheme} expand="lg" variant={props.currentTheme}>
       <Logo to="/" className="navbar-brand">
         <img

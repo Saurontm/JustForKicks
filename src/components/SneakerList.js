@@ -2,6 +2,7 @@ import SneakerItem from "./SneakerItem";
 import { ListWrapper } from "../styles";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const SneakersList = (props) => {
   const [query, setQuery] = useState("");
@@ -20,6 +21,10 @@ const SneakersList = (props) => {
     ));
   return (
     <div>
+      <Helmet>
+        <title>JFKicks- available sneakers</title>
+        <meta name="description" content="Helmet application" />
+      </Helmet>
       <SearchBar setQuery={setQuery} />
       <ListWrapper>{sneakersList}</ListWrapper>
     </div>
