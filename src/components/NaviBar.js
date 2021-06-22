@@ -3,6 +3,7 @@ import { ThemeButton, NavProduct, Logo } from "../styles";
 import { BiMoon, BiSun } from "react-icons/bi";
 import lightLogo from "../light-logo.png";
 import darkLogo from "../dark-logo.png";
+
 const NaviBar = (props) => {
   return (
     <Navbar bg={props.currentTheme} expand="lg" variant={props.currentTheme}>

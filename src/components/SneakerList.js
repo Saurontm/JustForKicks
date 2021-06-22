@@ -6,7 +6,6 @@ import { Helmet } from "react-helmet";
 
 const SneakersList = (props) => {
   const [query, setQuery] = useState("");
-
   const sneakersList = props.products
     .filter((product) =>
       product.name.toLowerCase().includes(query.toLowerCase())
@@ -22,7 +21,7 @@ const SneakersList = (props) => {
   return (
     <div>
       <Helmet>
-        <title>JFKicks- available sneakers</title>
+        <title>JFKicks - Available sneakers</title>
         <meta name="description" content="Helmet application" />
       </Helmet>
       <SearchBar setQuery={setQuery} />

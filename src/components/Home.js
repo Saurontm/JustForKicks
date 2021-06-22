@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <div>
       <Helmet>
-        <title>JFKicks. Find your sole-mate </title>
+        <title>JFKicks - Find your sole-mate </title>
         <meta name="description" content="Helmet application" />
       </Helmet>
       <Title>JUST FOR KICKS</Title>
