@@ -84,7 +84,7 @@ export const ThemeButton = styled.button`
   font-size: 1em;
   margin: 1.25em;
   border: 2px solid;
-  padding: 0.25em 0.5em;
+  padding: 0.1em 0.4em 0.2em 0.4em;
   border-radius: 30px;
   float: right;
   background-color: ${(props) => props.theme.backgroundColor};
