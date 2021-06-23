@@ -100,7 +100,7 @@ export const DeleteButtonStyled = styled.button`
   font-size: 1em;
   margin: 1.25em;
   border: 1px solid;
-  padding-top: 0.5em;
+  padding-top: 0.2em;
   padding-bottom: 0.3em;
   padding-right: 0.5em;
   padding-left: 0.5em;
@@ -118,7 +118,7 @@ export const BackButton = styled.button`
   float: right;
   font-size: 1em;
   ${"" /* margin: 1.25em; */}
-  padding: 0.25em 0.5em;
+  padding: 0.2em 0.5em;
   border: 2px solid;
   border-radius: 40px;
   border-color: ${(props) => props.theme.lightColor};
