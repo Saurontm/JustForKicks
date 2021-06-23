@@ -1,10 +1,10 @@
 import { DeleteButtonStyled } from "../styles";
 import { BsTrashFill } from "react-icons/bs";
+import productStore from "../stores/productStore";
 
 const DeleteButton = (props) => {
   const handleDelete = () => {
-    props.productDelete(props.sneakerID);
-    props.history.goBack();
+    productStore.sneakerDelete(props.sneakerID);
   };
   return (
     <DeleteButtonStyled onClick={handleDelete}>

@@ -3,11 +3,13 @@ import DeleteButton from "./DeleteButton";
 import { useParams, Redirect } from "react-router";
 import { useHistory } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import productStore from "../stores/productStore";
+import { observer } from "mobx-react-lite";
 
-const SneakerDetail = (props) => {
+const SneakerDetail = () => {
   const history = useHistory();
   const productSlug = useParams().productSlug;
-  const sneaker = props.products.find(
+  const sneaker = productStore.products.find(
     (sneaker) => sneaker.slug === productSlug
   );
 
@@ -25,14 +27,10 @@ const SneakerDetail = (props) => {
         <h4>{sneaker.name}</h4>
         <p>{sneaker.description}</p>
         <p>{sneaker.price} KD</p>
-        <DeleteButton
-          productDelete={props.productDelete}
-          sneakerID={sneaker.id}
-          history={history}
-        ></DeleteButton>
+        <DeleteButton sneakerID={sneaker.id} history={history}></DeleteButton>
       </DetailWrapper>
     </div>
   );
 };
 
-export default SneakerDetail;
+export default observer(SneakerDetail);

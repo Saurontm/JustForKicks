@@ -5,7 +5,6 @@ import { GlobalStyle } from "../src/styles";
 import { useState } from "react";
 import { Route } from "react-router";
 import { Switch } from "react-router";
-import products from "./products";
 import SneakersList from "./components/SneakerList";
 import Navibar from "./components/NaviBar";
 import SneakerDetail from "./components/SneakerDetails";
@@ -27,16 +26,6 @@ const theme = {
 };
 
 function App() {
-  const [_products, setProducts] = useState(products);
-
-  const productDelete = (sneakerID) => {
-    const updatedProducts = _products.filter(
-      (sneaker) => sneaker.id !== sneakerID
-    );
-    console.log(updatedProducts);
-    setProducts(updatedProducts);
-  };
-
   const [currentTheme, setCurrentTheme] = useState("light");
   const toggleTheme = () => {
     currentTheme === "light"
@@ -56,13 +45,10 @@ function App() {
             <HomePage />
           </Route>
           <Route path="/products/:productSlug">
-            <SneakerDetail
-              products={products}
-              productDelete={productDelete}
-            ></SneakerDetail>
+            <SneakerDetail></SneakerDetail>
           </Route>
           <Route path="/products">
-            <SneakersList products={_products} productDelete={productDelete} />
+            <SneakersList />
           </Route>
         </Switch>
       </ThemeProvider>

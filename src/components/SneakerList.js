@@ -3,21 +3,16 @@ import { ListWrapper } from "../styles";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
+import productStore from "../stores/productStore";
+import { observer } from "mobx-react-lite";
 
-const SneakersList = (props) => {
+const SneakersList = () => {
   const [query, setQuery] = useState("");
-  const sneakersList = props.products
+  const sneakersList = productStore.products
     .filter((product) =>
       product.name.toLowerCase().includes(query.toLowerCase())
     )
-    .map((product) => (
-      <SneakerItem
-        sneaker={product}
-        setSneaker={props.setSneaker}
-        sneakerID={product.id}
-        productDelete={props.productDelete}
-      />
-    ));
+    .map((product) => <SneakerItem sneaker={product} sneakerID={product.id} />);
   return (
     <div>
       <Helmet>
@@ -30,4 +25,4 @@ const SneakersList = (props) => {
   );
 };
 
-export default SneakersList;
+export default observer(SneakersList);
