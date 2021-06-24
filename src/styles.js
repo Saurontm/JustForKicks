@@ -1,5 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
+import { BsPlusCircle } from "react-icons/bs";
 
 export const GlobalStyle = createGlobalStyle`
 body{
@@ -51,6 +52,7 @@ export const ListWrapper = styled.div`
   display: flex; /* allows us to use Flexbox */
   align-items: center;
   justify-content: center;
+  margin-top: 50px;
 `;
 
 export const ProductWrapper = styled.div`
@@ -131,6 +133,23 @@ export const BackButton = styled.button`
   }
 `;
 
+export const AddButton = styled.button`
+  float: left;
+  font-size: 1em;
+  margin-top: 1.25em;
+  padding: 0.2em 0.5em;
+  border: 2px solid;
+  border-radius: 40px;
+  border-color: ${(props) => props.theme.lightColor};
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.lightColor};
+  cursor: pointer;
+  &:hover {
+    background-color: ${(props) => props.theme.lightColor};
+    color: ${(props) => props.theme.backgroundColor};
+  }
+`;
+
 export const SearchBarStyled = styled.input`
   padding: 0.5rem;
   margin: 1rem auto;
@@ -162,6 +181,19 @@ export const DetailWrapper = styled.div`
   p {
     padding-right: 20px;
     ${"" /* vertical-align: middle; */}
+    color: ${(props) => props.theme.secondaryColor};
+  }
+`;
+
+export const BsPlusCircleStyled = styled(BsPlusCircle)`
+  size: 1.7em;
+  float: right;
+  margin-right: 2.3em;
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.lightColor};
+
+  &:hover {
+    ${"" /* background-color: ${(props) => props.theme.secondaryColor}; */}
     color: ${(props) => props.theme.secondaryColor};
   }
 `;
