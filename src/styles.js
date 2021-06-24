@@ -1,6 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import { BsPlusCircle } from "react-icons/bs";
+import { IoMdClose } from "react-icons/io";
 
 export const GlobalStyle = createGlobalStyle`
 body{
@@ -189,6 +190,19 @@ export const BsPlusCircleStyled = styled(BsPlusCircle)`
   size: 1.7em;
   float: right;
   margin-right: 2.3em;
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.lightColor};
+
+  &:hover {
+    ${"" /* background-color: ${(props) => props.theme.secondaryColor}; */}
+    color: ${(props) => props.theme.secondaryColor};
+  }
+`;
+
+export const IoMdCloseStyled = styled(IoMdClose)`
+  size: 1.7em;
+  float: right;
+
   background-color: ${(props) => props.theme.backgroundColor};
   color: ${(props) => props.theme.lightColor};
 

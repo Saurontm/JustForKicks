@@ -1,7 +1,7 @@
 import Modal from "react-modal";
 import { useState } from "react";
 import productStore from "../../stores/productStore";
-import { AddButton } from "../../styles";
+import { AddButton, IoMdCloseStyled } from "../../styles";
 
 const SneakerModal = (props) => {
   const [sneaker, setSneaker] = useState({
@@ -27,6 +27,7 @@ const SneakerModal = (props) => {
         onRequestClose={props.closeModal}
         contentLabel="Sneaker Modal"
       >
+        <IoMdCloseStyled size="1.7em" onClick={props.closeModal} />
         <h1>Add new sneaker</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group row">
