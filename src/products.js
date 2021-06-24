@@ -29,15 +29,5 @@ const products = [
     description:
       "Previously seen in a predominantly-cork arrangement, the newly-surfaced proposition indulges in a summer-ready ensemble clad in shades of “Green Glow” and “Coconut Milk.” Canvas material across the shoe’s upper delivers a lighter stride than traditional leather would, and when paired with the tropical hues throughout the tongue, profile swooshes and spine, it becomes appropriate of the upcoming season.",
   },
-  {
-    id: 4,
-    name: "Nike Air Force 1 The Great Unity",
-    slug: "nike-air-force-1-the-great-unity",
-    price: 70,
-    imageURL:
-      "https://sneakernews.com/wp-content/uploads/2021/04/Nike-Air-Force-1-Low-TGU-DM5447-111-3.jpg",
-    description:
-      "While not as direct nods to the classical Chinese ideology of the Great Unity as the text on the lateral heel and sock-liner, these graphics allude to the utopian vision of the world written about before 907 B.C. Iridescent lace dubraes, semi-translucent profile swooshes and holographic “NIKE AIR”-branded heel panels evoke the idea of enlightenment, which under the Great Unity, would lead to virtuous rule of the people, by the people; benevolence for the welfare of all, especially the elderly; and a lack of selfish thoughts.",
-  },
 ];
 export default products;

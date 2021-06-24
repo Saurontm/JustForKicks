@@ -38,6 +38,7 @@ const SneakerModal = (props) => {
                 type="text"
                 onChange={handleChange}
                 name="name"
+                required
               />
             </div>
             <div className="col-6">
@@ -48,6 +49,7 @@ const SneakerModal = (props) => {
                 min="1"
                 onChange={handleChange}
                 name="price"
+                required
               />
             </div>
           </div>
@@ -58,6 +60,7 @@ const SneakerModal = (props) => {
               type="text"
               onChange={handleChange}
               name="description"
+              required
             />
           </div>
           <div className="form-group">
@@ -67,6 +70,7 @@ const SneakerModal = (props) => {
               type="text"
               onChange={handleChange}
               name="imageURL"
+              required
             />
           </div>
           <AddButton>Add sneaker</AddButton>
