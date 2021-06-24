@@ -13,7 +13,6 @@ const SneakerModal = (props) => {
 
   const handleChange = (event) => {
     setSneaker({ ...sneaker, [event.target.name]: event.target.value });
-    console.log(sneaker);
   };
 
   const handleSubmit = (event) => {

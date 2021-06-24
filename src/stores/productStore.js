@@ -17,9 +17,11 @@ class ProductStore {
   };
 
   sneakerAdd = (newSneaker) => {
-    newSneaker.id = this.products.length + 1;
-    newSneaker.slug = slugify(newSneaker.name);
-    this.products.push(newSneaker);
+    this.products.push({
+      ...newSneaker,
+      id: this.products.length + 1,
+      slug: slugify(newSneaker.name),
+    });
   };
 }
 
