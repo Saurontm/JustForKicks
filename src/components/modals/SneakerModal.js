@@ -8,7 +8,7 @@ const SneakerModal = (props) => {
     name: "",
     price: 0,
     description: "",
-    image: "",
+    imageURL: "",
   });
 
   const handleChange = (event) => {
