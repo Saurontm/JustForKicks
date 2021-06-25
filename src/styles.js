@@ -101,6 +101,9 @@ export const ThemeButton = styled.button`
 
 export const DeleteButtonStyled = styled.button`
   font-size: 1em;
+  float: right;
+  ${"" /* margin-right: 5px; */}
+  display: inline-block;
   margin: 1.25em;
   border: 1px solid;
   padding-top: 0.2em;
@@ -209,5 +212,26 @@ export const IoMdCloseStyled = styled(IoMdClose)`
   &:hover {
     ${"" /* background-color: ${(props) => props.theme.secondaryColor}; */}
     color: ${(props) => props.theme.secondaryColor};
+  }
+`;
+
+export const UpdateButtonStyled = styled.button`
+  font-size: 1em;
+  display: inline-block;
+  float: left;
+  margin-right: 5px;
+  margin: 1.25em;
+  border: 1px solid;
+  padding-top: 0.2em;
+  padding-bottom: 0.3em;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  border-radius: 30px;
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.secondaryColor};
+
+  &:hover {
+    background-color: ${(props) => props.theme.secondaryColor};
+    color: ${(props) => props.theme.backgroundColor};
   }
 `;

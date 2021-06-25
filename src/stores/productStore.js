@@ -23,6 +23,15 @@ class ProductStore {
       slug: slugify(newSneaker.name),
     });
   };
+
+  sneakerUpdate = (updatedSneaker) => {
+    this.products[
+      this.products.findIndex((sneaker) => sneaker.id === updatedSneaker.id)
+    ] = {
+      ...updatedSneaker,
+      slug: slugify(updatedSneaker.name),
+    };
+  };
 }
 
 const productStore = new ProductStore();

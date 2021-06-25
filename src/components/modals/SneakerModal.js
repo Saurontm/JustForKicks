@@ -4,12 +4,9 @@ import productStore from "../../stores/productStore";
 import { AddButton, IoMdCloseStyled } from "../../styles";
 
 const SneakerModal = (props) => {
-  const [sneaker, setSneaker] = useState({
-    name: "",
-    price: 0,
-    description: "",
-    imageURL: "",
-  });
+  const [sneaker, setSneaker] = useState(
+    props.oldSneaker ?? { name: "", price: 0, description: "", imageURL: "" }
+  );
 
   const handleChange = (event) => {
     setSneaker({ ...sneaker, [event.target.name]: event.target.value });
@@ -17,7 +14,9 @@ const SneakerModal = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    productStore.sneakerAdd(sneaker);
+    props.oldSneaker
+      ? productStore.sneakerUpdate(sneaker)
+      : productStore.sneakerAdd(sneaker);
     props.closeModal();
   };
   return (
@@ -38,6 +37,7 @@ const SneakerModal = (props) => {
                 type="text"
                 onChange={handleChange}
                 name="name"
+                value={sneaker.name}
                 required
               />
             </div>
@@ -49,6 +49,7 @@ const SneakerModal = (props) => {
                 min="1"
                 onChange={handleChange}
                 name="price"
+                value={sneaker.price}
                 required
               />
             </div>
@@ -60,6 +61,7 @@ const SneakerModal = (props) => {
               type="text"
               onChange={handleChange}
               name="description"
+              value={sneaker.description}
               required
             />
           </div>
@@ -70,10 +72,11 @@ const SneakerModal = (props) => {
               type="text"
               onChange={handleChange}
               name="imageURL"
+              value={sneaker.imageURL}
               required
             />
           </div>
-          <AddButton>Add sneaker</AddButton>
+          <AddButton>{props.oldSneaker ? "Update" : "Add"}</AddButton>
         </form>
       </Modal>
     </div>
