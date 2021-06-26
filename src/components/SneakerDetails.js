@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import productStore from "../stores/productStore";
 import { observer } from "mobx-react-lite";
+import UpdateButton from "./UpdateButton";
 
 const SneakerDetail = () => {
   const history = useHistory();
@@ -27,6 +28,7 @@ const SneakerDetail = () => {
         <h4>{sneaker.name}</h4>
         <p>{sneaker.description}</p>
         <p>{sneaker.price} KD</p>
+        <UpdateButton sneaker={sneaker}></UpdateButton>
         <DeleteButton sneakerID={sneaker.id} history={history}></DeleteButton>
       </DetailWrapper>
     </div>
