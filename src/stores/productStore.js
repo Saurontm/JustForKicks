@@ -18,11 +18,16 @@ class ProductStore {
     }
   };
 
-  sneakerDelete = (sneakerId) => {
-    const updatedSneakers = this.products.filter(
-      (sneaker) => sneaker.id !== sneakerId
-    );
-    this.products = updatedSneakers;
+  sneakerDelete = async (sneakerId) => {
+    try {
+      await axios.delete(`http://localhost:8000/products/${sneakerId}`);
+      const updatedSneakers = this.products.filter(
+        (sneaker) => sneaker.id !== sneakerId
+      );
+      this.products = updatedSneakers;
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   sneakerAdd = (newSneaker) => {
