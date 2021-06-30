@@ -1,5 +1,4 @@
 import { makeAutoObservable } from "mobx";
-import slugify from "react-slugify";
 import axios from "axios";
 
 class ProductStore {
@@ -30,21 +29,32 @@ class ProductStore {
     }
   };
 
-  sneakerAdd = (newSneaker) => {
-    this.products.push({
-      ...newSneaker,
-      id: this.products.length + 1,
-      slug: slugify(newSneaker.name),
-    });
+  sneakerAdd = async (newSneaker) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/products",
+        newSneaker
+      );
+      this.products.push(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  sneakerUpdate = (updatedSneaker) => {
-    this.products[
-      this.products.findIndex((sneaker) => sneaker.id === updatedSneaker.id)
-    ] = {
-      ...updatedSneaker,
-      slug: slugify(updatedSneaker.name),
-    };
+  sneakerUpdate = async (updatedSneaker) => {
+    try {
+      await axios.put(
+        `http://localhost:8000/products/${updatedSneaker.id}`,
+        updatedSneaker
+      );
+      this.products[
+        this.products.findIndex((sneaker) => sneaker.id === updatedSneaker.id)
+      ] = {
+        ...updatedSneaker,
+      };
+    } catch (error) {
+      console.error(error);
+    }
   };
 }
 
