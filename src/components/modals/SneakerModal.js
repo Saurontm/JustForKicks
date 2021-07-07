@@ -12,6 +12,10 @@ const SneakerModal = (props) => {
     setSneaker({ ...sneaker, [event.target.name]: event.target.value });
   };
 
+  const handleImage = (event) => {
+    setSneaker({ ...sneaker, image: event.target.files[0] });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     props.oldSneaker
@@ -69,10 +73,9 @@ const SneakerModal = (props) => {
             <label>Image</label>
             <input
               className="form-control"
-              type="text"
-              onChange={handleChange}
+              type="file"
+              onChange={handleImage}
               name="image"
-              value={sneaker.image}
               required
             />
           </div>
