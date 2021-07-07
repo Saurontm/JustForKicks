@@ -8,7 +8,7 @@ const SneakerItem = (props) => {
   return (
     <ProductWrapper>
       <Link to={`/products/${props.sneaker.slug}`}>
-        <img alt={props.sneaker.name} src={props.sneaker.imageURL} />
+        <img alt={props.sneaker.name} src={props.sneaker.image} />
         <p>{props.sneaker.name}</p>
         <p className="product-price">{props.sneaker.price} KD</p>
       </Link>

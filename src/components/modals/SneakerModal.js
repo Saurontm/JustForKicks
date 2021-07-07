@@ -5,7 +5,7 @@ import { AddButton, IoMdCloseStyled } from "../../styles";
 
 const SneakerModal = (props) => {
   const [sneaker, setSneaker] = useState(
-    props.oldSneaker ?? { name: "", price: 0, description: "", imageURL: "" }
+    props.oldSneaker ?? { name: "", price: 0, description: "", image: "" }
   );
 
   const handleChange = (event) => {
@@ -71,8 +71,8 @@ const SneakerModal = (props) => {
               className="form-control"
               type="text"
               onChange={handleChange}
-              name="imageURL"
-              value={sneaker.imageURL}
+              name="image"
+              value={sneaker.image}
               required
             />
           </div>

@@ -23,7 +23,7 @@ const SneakerDetail = () => {
       </Helmet>
       <DetailWrapper>
         <BackButton onClick={() => history.goBack()}>back</BackButton>
-        <img src={sneaker.imageURL} alt={sneaker.name} />
+        <img src={sneaker.image} alt={sneaker.name} />
 
         <h4>{sneaker.name}</h4>
         <p>{sneaker.description}</p>
