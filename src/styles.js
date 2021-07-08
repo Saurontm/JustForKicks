@@ -51,6 +51,7 @@ export const ShopImage = styled.img`
 
 export const ListWrapper = styled.div`
   display: flex; /* allows us to use Flexbox */
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   margin-top: 50px;
