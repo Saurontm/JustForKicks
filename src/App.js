@@ -1,14 +1,13 @@
 import "./App.css";
-import HomePage from "./components/Home";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../src/styles";
 import { useState } from "react";
-import { Route } from "react-router";
-import { Switch } from "react-router";
-import SneakersList from "./components/SneakerList";
 import Navibar from "./components/NaviBar";
-import SneakerDetail from "./components/SneakerDetails";
 import React from "react";
+import Routes from "./components/Routes";
+import productStore from "./stores/productStore";
+import brandStore from "./stores/brandStore";
+import { observer } from "mobx-react";
 
 const theme = {
   light: {
@@ -40,20 +39,14 @@ function App() {
           currentTheme={currentTheme}
           toggleTheme={toggleTheme}
         ></Navibar>
-        <Switch>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route path="/products/:productSlug">
-            <SneakerDetail></SneakerDetail>
-          </Route>
-          <Route path="/products">
-            <SneakersList />
-          </Route>
-        </Switch>
+        {productStore.loading || brandStore.loading ? (
+          <h1>Loading...</h1>
+        ) : (
+          <Routes />
+        )}
       </ThemeProvider>
     </div>
   );
 }
 
-export default App;
+export default observer(App);

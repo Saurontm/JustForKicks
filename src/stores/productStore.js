@@ -3,6 +3,7 @@ import axios from "axios";
 
 class ProductStore {
   products = [];
+  loading = true;
 
   constructor() {
     makeAutoObservable(this);
@@ -12,6 +13,7 @@ class ProductStore {
     try {
       const response = await axios.get("http://localhost:8000/products");
       this.products = response.data;
+      this.loading = false;
     } catch (error) {
       console.error("fetchSneakers", error);
     }
@@ -29,16 +31,17 @@ class ProductStore {
     }
   };
 
-  sneakerAdd = async (newSneaker) => {
+  sneakerAdd = async (newSneaker, brand) => {
     try {
       const formData = new FormData();
       for (const key in newSneaker) formData.append(key, newSneaker[key]);
-
+      console.log(brand.id);
       const response = await axios.post(
-        "http://localhost:8000/products",
+        `http://localhost:8000/brands/${brand.id}/products`,
         formData
       );
       this.products.push(response.data);
+      brand.products.push({ id: response.data.id });
     } catch (error) {
       console.error(error);
     }
@@ -54,10 +57,6 @@ class ProductStore {
         formData
       );
 
-      // const sneaker = this.products.find(
-      //   (sneaker) => sneaker.id === response.data.id
-      // );
-
       this.products[
         this.products.findIndex((sneaker) => sneaker.id === response.data.id)
       ] = {
@@ -67,6 +66,9 @@ class ProductStore {
       console.error(error);
     }
   };
+
+  getProductById = (productID) =>
+    this.products.find((product) => product.id === productID);
 }
 
 const productStore = new ProductStore();

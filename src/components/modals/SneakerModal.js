@@ -20,7 +20,7 @@ const SneakerModal = (props) => {
     event.preventDefault();
     props.oldSneaker
       ? productStore.sneakerUpdate(sneaker)
-      : productStore.sneakerAdd(sneaker);
+      : productStore.sneakerAdd(sneaker, props.brand);
     props.closeModal();
   };
   return (

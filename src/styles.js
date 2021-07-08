@@ -54,7 +54,7 @@ export const ListWrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 90px;
 `;
 
 export const ProductWrapper = styled.div`
@@ -158,6 +158,7 @@ export const AddButton = styled.button`
 export const SearchBarStyled = styled.input`
   padding: 0.5rem;
   margin: 1rem auto;
+  margin-bottom: -30px;
   display: block;
   width: 40%;
   border: 1px solid #b0b0b0;
@@ -187,6 +188,17 @@ export const DetailWrapper = styled.div`
     padding-right: 20px;
     ${"" /* vertical-align: middle; */}
     color: ${(props) => props.theme.secondaryColor};
+  }
+
+  &.brand{
+    ${"" /* display: block; */}
+    img {
+    width: 20%;
+    height: auto;
+    float: center;
+    margin: auto;
+  }
+
   }
 `;
 

@@ -1,5 +1,5 @@
 import { Navbar, Nav } from "react-bootstrap";
-import { ThemeButton, NavProduct, Logo } from "../styles";
+import { ThemeButton, Logo } from "../styles";
 import { BiMoon, BiSun } from "react-icons/bi";
 import lightLogo from "../light-logo.png";
 import darkLogo from "../dark-logo.png";
@@ -16,9 +16,8 @@ const NaviBar = (props) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <NavProduct to="/products" className="nav-item">
-            Sneakers
-          </NavProduct>
+          <Nav.Link href="/products">Sneakers</Nav.Link>
+          <Nav.Link href="/brands">Brands</Nav.Link>
         </Nav>
       </Navbar.Collapse>
       <ThemeButton onClick={props.toggleTheme}>

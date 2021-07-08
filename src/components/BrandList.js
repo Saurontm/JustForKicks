@@ -1,39 +1,34 @@
-import SneakerItem from "./SneakerItem";
 import { ListWrapper, BsPlusCircleStyled } from "../styles";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { observer } from "mobx-react-lite";
-import SneakerModal from "./modals/SneakerModal";
+import brandStore from "../stores/brandStore";
+import BrandItem from "./BrandItem";
+import BrandModal from "./modals/BrandModal";
 
-const SneakersList = ({ sneakers, brand }) => {
+const BrandList = () => {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
 
-  const sneakersList = sneakers
-    .filter((product) =>
-      product.name.toLowerCase().includes(query.toLowerCase())
-    )
-    .map((product) => <SneakerItem sneaker={product} sneakerID={product.id} />);
+  const brandList = brandStore.brands
+    .filter((brand) => brand.name.toLowerCase().includes(query.toLowerCase()))
+    .map((brand) => <BrandItem brand={brand} />);
   return (
     <div>
       <Helmet>
-        <title>JFKicks - Available sneakers</title>
+        <title>JFKicks - Available Brands</title>
         <meta name="description" content="Helmet application" />
       </Helmet>
       <SearchBar setQuery={setQuery} />
       <BsPlusCircleStyled size="1.7em" onClick={openModal} />
-      <SneakerModal
-        isOpen={isOpen}
-        closeModal={closeModal}
-        brand={brand}
-      ></SneakerModal>
-      <ListWrapper>{sneakersList}</ListWrapper>
+      <BrandModal isOpen={isOpen} closeModal={closeModal}></BrandModal>
+      <ListWrapper>{brandList}</ListWrapper>
     </div>
   );
 };
 
-export default observer(SneakersList);
+export default observer(BrandList);
