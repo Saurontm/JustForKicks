@@ -100,6 +100,22 @@ export const ThemeButton = styled.button`
   }
 `;
 
+export const UserButtonStyled = styled.button`
+  font-size: 1em;
+  ${"" /* margin: 1em; */}
+  border: 2px solid;
+  padding: 0.1em 0.4em 0.2em 0.4em;
+  border-radius: 30px;
+  float: right;
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.secondaryColor};
+
+  &:hover {
+    background-color: ${(props) => props.theme.secondaryColor};
+    color: ${(props) => props.theme.backgroundColor};
+  }
+`;
+
 export const DeleteButtonStyled = styled.button`
   font-size: 1em;
   float: right;

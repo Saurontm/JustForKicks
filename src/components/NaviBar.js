@@ -1,4 +1,5 @@
 import { Navbar, Nav } from "react-bootstrap";
+import SigninButton from "./SigninButton";
 import { ThemeButton, Logo } from "../styles";
 import { BiMoon, BiSun } from "react-icons/bi";
 import lightLogo from "../light-logo.png";
@@ -20,6 +21,7 @@ const NaviBar = (props) => {
           <Nav.Link href="/brands">Brands</Nav.Link>
         </Nav>
       </Navbar.Collapse>
+      <SigninButton></SigninButton>
       <ThemeButton onClick={props.toggleTheme}>
         {props.currentTheme === "light" ? <BiMoon /> : <BiSun />}
       </ThemeButton>
