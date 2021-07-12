@@ -32,6 +32,22 @@ export const Title = styled.h1`
   margin-top: 30px;
 `;
 
+export const SignupTitle = styled.h1`
+  color: ${(props) => props.theme.mainColor};
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  ${"" /* font-weight: 600; */}
+  ont-size: 180%;
+  ${"" /* margin-top: 20px; */}
+
+  &.small {
+    font-size: 130%;
+    margin: 0;
+    margin-bottom: 10;
+    color: ${(props) => props.theme.secondaryColor};
+  }
+`;
+
 export const Description = styled.h4`
   color: ${(props) => props.theme.mainColor};
   text-align: center;
@@ -116,6 +132,43 @@ export const UserButtonStyled = styled.button`
   }
 `;
 
+export const StyledInputDiv = styled.div`
+  display: "flex";
+  flex-direction: "row";
+  border: 1px solid grey;
+
+  &.focus {
+    /* removing the input focus blue box. Put this on the form if you like. */
+    outline: none;
+  }
+`;
+
+export const StyledInput = styled.input`
+  border: 0;
+  outline: 0;
+  outline-width: 0;
+  box-shadow: 0;
+
+  *:focus {
+    outline: 0;
+    border: 0;
+    outline-width: 0;
+  }
+`;
+
+export const HideButtonStyled = styled.button`
+  font-size: 1em;
+  ${"" /* position: absolute; */}
+  float: right;
+  ${"" /* margin: 0.6em; */}
+  border: none;
+  ${"" /* padding: 0.1em 0.4em 0.2em 0.4em; */}
+  border-radius: 30px;
+  ${"" /* float: right; */}
+  background-color: rgba(0,0,0,0.0);
+  color: ${(props) => props.theme.secondaryColor};
+`;
+
 export const DeleteButtonStyled = styled.button`
   font-size: 1em;
   float: right;
@@ -168,6 +221,12 @@ export const AddButton = styled.button`
   &:hover {
     background-color: ${(props) => props.theme.lightColor};
     color: ${(props) => props.theme.backgroundColor};
+  }
+  &.signup {
+    float: center;
+    margin-left: auto;
+    margin-top: -300;
+    margin-bottom: 300;
   }
 `;
 
