@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { observer } from "mobx-react-lite";
 import SneakerModal from "./modals/SneakerModal";
+import authStore from "../stores/authStore";
 
 const SneakersList = ({ sneakers, brand }) => {
   const [query, setQuery] = useState("");
@@ -25,7 +26,10 @@ const SneakersList = ({ sneakers, brand }) => {
         <meta name="description" content="Helmet application" />
       </Helmet>
       <SearchBar setQuery={setQuery} />
-      <BsPlusCircleStyled size="1.7em" onClick={openModal} />
+      {authStore.user && (
+        <BsPlusCircleStyled size="1.7em" onClick={openModal} />
+      )}
+
       <SneakerModal
         isOpen={isOpen}
         closeModal={closeModal}

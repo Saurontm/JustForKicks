@@ -1,9 +1,11 @@
 import { Navbar, Nav } from "react-bootstrap";
 import SigninButton from "./SigninButton";
-import { ThemeButton, Logo } from "../styles";
+import { ThemeButton, Logo, HelloMessage } from "../styles";
 import { BiMoon, BiSun } from "react-icons/bi";
 import lightLogo from "../light-logo.png";
 import darkLogo from "../dark-logo.png";
+import authStore from "../stores/authStore";
+import { observer } from "mobx-react";
 
 const NaviBar = (props) => {
   return (
@@ -21,7 +23,12 @@ const NaviBar = (props) => {
           <Nav.Link href="/brands">Brands</Nav.Link>
         </Nav>
       </Navbar.Collapse>
-      <SigninButton></SigninButton>
+      {authStore.user ? (
+        <HelloMessage> welcome, {authStore.user.username}</HelloMessage>
+      ) : (
+        <SigninButton></SigninButton>
+      )}
+
       <ThemeButton onClick={props.toggleTheme}>
         {props.currentTheme === "light" ? <BiMoon /> : <BiSun />}
       </ThemeButton>
@@ -29,4 +36,4 @@ const NaviBar = (props) => {
   );
 };
 
-export default NaviBar;
+export default observer(NaviBar);

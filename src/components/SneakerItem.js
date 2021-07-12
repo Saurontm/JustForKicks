@@ -3,6 +3,7 @@ import DeleteButton from "./DeleteButton";
 import UpdateButton from "./UpdateButton";
 import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
+import authStore from "../stores/authStore";
 
 const SneakerItem = (props) => {
   return (
@@ -12,11 +13,15 @@ const SneakerItem = (props) => {
         <p>{props.sneaker.name}</p>
         <p className="product-price">{props.sneaker.price} KD</p>
       </Link>
-      <UpdateButton sneaker={props.sneaker}></UpdateButton>
-      <DeleteButton
-        productDelete={props.productDelete}
-        sneakerID={props.sneaker.id}
-      ></DeleteButton>
+      {authStore.user && (
+        <>
+          <UpdateButton sneaker={props.sneaker}></UpdateButton>
+          <DeleteButton
+            productDelete={props.productDelete}
+            sneakerID={props.sneaker.id}
+          ></DeleteButton>
+        </>
+      )}
     </ProductWrapper>
   );
 };

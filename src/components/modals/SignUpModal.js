@@ -7,6 +7,7 @@ import {
   HideButtonStyled,
   StyledInput,
   SignupTitle,
+  SignButton,
 } from "../../styles";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import PasswordStrengthBar from "react-password-strength-bar";
@@ -14,6 +15,7 @@ import PasswordStrengthBar from "react-password-strength-bar";
 const SneakerModal = (props) => {
   const [user, setUser] = useState({ username: "", password: "" });
   const [hiddenPassword, setHidden] = useState(true);
+  const [signin, setSignin] = useState(false);
 
   const handleChange = (event) => {
     setUser({ ...user, [event.target.name]: event.target.value });
@@ -22,9 +24,14 @@ const SneakerModal = (props) => {
   const togglePasswordVisibility = () => {
     setHidden(!hiddenPassword);
   };
+
+  const toggleSignIn = () => {
+    setSignin(!signin);
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
-    userStore.signup(user);
+    signin ? userStore.signin(user) : userStore.signup(user);
+
     props.closeModal();
   };
   return (
@@ -36,7 +43,11 @@ const SneakerModal = (props) => {
         centered
       >
         <Modal.Header closeButton>
-          <SignupTitle className="small">Sign up and join the fun!</SignupTitle>
+          <SignupTitle className="small">
+            {signin
+              ? "Welcome back, sign into your account"
+              : "Sign up and join the fun!"}
+          </SignupTitle>
         </Modal.Header>
 
         <form onSubmit={handleSubmit}>
@@ -105,16 +116,23 @@ const SneakerModal = (props) => {
                   )}
                 </HideButtonStyled>
               </div>
-              <PasswordStrengthBar password={user.password} />
+              {!signin && <PasswordStrengthBar password={user.password} />}
             </div>
             <AddButton
               className="signup"
               style={{ marginBottom: 20, float: "right" }}
             >
-              sign up
+              {signin ? "Sign in" : "Sign up"}
             </AddButton>
           </div>
         </form>
+        <p style={{ textAlign: "center" }}>
+          {signin ? "Dont have an account?" : "Already have an account?"}
+          <SignButton onClick={toggleSignIn}>
+            {" "}
+            {signin ? "Sign up" : "Sign in"}
+          </SignButton>
+        </p>
       </Modal>
     </div>
   );

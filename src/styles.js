@@ -59,6 +59,16 @@ export const Description = styled.h4`
   margin-bottom: -20px;
 `;
 
+export const HelloMessage = styled.p`
+  color: ${(props) => props.theme.mainColor};
+  text-align: center;
+  font-family: "Bodoni Moda", serif;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 150%;
+  margin-top: 15px;
+`;
+
 export const ShopImage = styled.img`
   height: 100%;
   width: 100%;
@@ -205,6 +215,13 @@ export const BackButton = styled.button`
     background-color: ${(props) => props.theme.lightColor};
     color: ${(props) => props.theme.backgroundColor};
   }
+`;
+export const SignButton = styled.button`
+  float: center;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  text-decoration: underline;
+  color: ${(props) => props.theme.secondaryColor};
 `;
 
 export const AddButton = styled.button`

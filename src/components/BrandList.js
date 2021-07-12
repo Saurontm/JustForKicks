@@ -6,6 +6,7 @@ import { observer } from "mobx-react-lite";
 import brandStore from "../stores/brandStore";
 import BrandItem from "./BrandItem";
 import BrandModal from "./modals/BrandModal";
+import authStore from "../stores/authStore";
 
 const BrandList = () => {
   const [query, setQuery] = useState("");
@@ -24,7 +25,9 @@ const BrandList = () => {
         <meta name="description" content="Helmet application" />
       </Helmet>
       <SearchBar setQuery={setQuery} />
-      <BsPlusCircleStyled size="1.7em" onClick={openModal} />
+      {authStore.user && (
+        <BsPlusCircleStyled size="1.7em" onClick={openModal} />
+      )}
       <BrandModal isOpen={isOpen} closeModal={closeModal}></BrandModal>
       <ListWrapper>{brandList}</ListWrapper>
     </div>
