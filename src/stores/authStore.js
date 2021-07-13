@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx";
-import axios from "axios";
 import decode from "jwt-decode";
+import instance from "./instance";
 
 class UserStore {
   user = null;
@@ -11,23 +11,48 @@ class UserStore {
 
   signup = async (newUser) => {
     try {
-      const res = await axios.post("http://localhost:8000/signup", newUser);
-      this.user = decode(res.data.token);
+      const res = await instance.post("/signup", newUser);
+      this.setUser(res.data.token);
     } catch (error) {
       console.error(error);
     }
   };
 
-  signin = async (newData) => {
+  signin = async (userData) => {
     try {
-      const res = await axios.post("http://localhost:8000/signin", newData);
-      this.user = decode(res.data.token);
-      console.log(decode(res.data.token));
+      const res = await instance.post("/signin", userData);
+      this.setUser(res.data.token);
     } catch (error) {
       console.error(error);
+    }
+  };
+
+  signout = () => {
+    delete instance.defaults.headers.common.Authorization;
+    localStorage.removeItem("myToken");
+    this.user = null;
+  };
+
+  setUser = (token) => {
+    localStorage.setItem("myToken", token);
+    instance.defaults.headers.common.Authorization = `Bearer ${token}`;
+    this.user = decode(token);
+  };
+
+  checkForToken = () => {
+    const token = localStorage.getItem("myToken");
+    if (token) {
+      const currentTime = Date.now();
+      const user = decode(token);
+      if (user.exp >= currentTime) {
+        this.setUser(token);
+      } else {
+        this.signout();
+      }
     }
   };
 }
 
-const userStore = new UserStore();
-export default userStore;
+const authStore = new UserStore();
+authStore.checkForToken();
+export default authStore;

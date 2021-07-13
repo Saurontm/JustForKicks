@@ -1,7 +1,7 @@
 // import Modal from "react-modal";
 import { Modal } from "react-bootstrap";
 import { useState } from "react";
-import userStore from "../../stores/authStore";
+import authStore from "../../stores/authStore";
 import {
   AddButton,
   HideButtonStyled,
@@ -30,7 +30,7 @@ const SneakerModal = (props) => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    signin ? userStore.signin(user) : userStore.signup(user);
+    signin ? authStore.signin(user) : authStore.signup(user);
 
     props.closeModal();
   };

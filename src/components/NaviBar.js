@@ -1,5 +1,6 @@
 import { Navbar, Nav } from "react-bootstrap";
 import SigninButton from "./SigninButton";
+import SignoutButton from "./SignoutButton";
 import { ThemeButton, Logo, HelloMessage } from "../styles";
 import { BiMoon, BiSun } from "react-icons/bi";
 import lightLogo from "../light-logo.png";
@@ -24,9 +25,13 @@ const NaviBar = (props) => {
         </Nav>
       </Navbar.Collapse>
       {authStore.user ? (
-        <HelloMessage> welcome, {authStore.user.username}</HelloMessage>
+        <>
+          {" "}
+          <HelloMessage> welcome, {authStore.user.username}</HelloMessage>{" "}
+          <SignoutButton />
+        </>
       ) : (
-        <SigninButton></SigninButton>
+        <SigninButton />
       )}
 
       <ThemeButton onClick={props.toggleTheme}>

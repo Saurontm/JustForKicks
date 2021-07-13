@@ -67,6 +67,7 @@ export const HelloMessage = styled.p`
   font-weight: 100;
   font-size: 150%;
   margin-top: 15px;
+  margin-right: 15px;
 `;
 
 export const ShopImage = styled.img`
